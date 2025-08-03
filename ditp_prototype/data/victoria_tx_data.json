@@ -1,0 +1,25 @@
+
+{
+  "nodes": [
+    { "id": "Victoria County", "group": "government", "details": "Central governing body. Source of multiple financial irregularities." },
+    { "id": "Non-Departmental Expenses", "group": "financial", "details": "A budget category used to obscure payments." },
+    { "id": "Legal Services ($175k)", "group": "financial", "details": "A $175,000 payment for unspecified legal services, a red flag for concealed illicit transactions." },
+    { "id": "VSTDC", "group": "unaudited_entity", "details": "Victoria Sales Tax Development Corporation. An unaudited component unit, enabling potential embezzlement." },
+    { "id": "Downtown TIRZ No.1", "group": "unaudited_entity", "details": "Another unaudited component unit, creating financial opacity." },
+    { "id": "Victoria PD & Sheriff", "group": "le_abuse", "details": "Perpetrators of 'False Arrests & Excessive Force', medically proven by facial CT scan." },
+    { "id": "Crossroads Health Center", "group": "victim", "details": "Subject of alleged billing fraud." },
+    { "id": "Texas Medical Board", "group": "obstruction", "details": "Dismissed billing fraud complaint on a 'technicality', demonstrating bureaucratic obstruction." },
+    { "id": "Intimidator (361-550-9651)", "group": "retaliation", "details": "Source of threatening text messages employing religious scripture to intimidate and silence." },
+    { "id": "Citizen Complainant", "group": "victim", "details": "Recipient of intimidation and subject of illegal surveillance and false arrests." }
+  ],
+  "links": [
+    { "source": "Victoria County", "target": "Non-Departmental Expenses", "value": 10, "details": "Funds allocated to a vague category." },
+    { "source": "Non-Departmental Expenses", "target": "Legal Services ($175k)", "value": 8, "details": "Obscured payment made from non-departmental funds." },
+    { "source": "Victoria County", "target": "VSTDC", "value": 5, "details": "Transfers funds to an unaudited entity." },
+    { "source": "Victoria County", "target": "Downtown TIRZ No.1", "value": 5, "details": "Transfers funds to an unaudited entity." },
+    { "source": "Victoria County", "target": "Victoria PD & Sheriff", "value": 9, "details": "Funds the departments responsible for abuse of power." },
+    { "source": "Victoria PD & Sheriff", "target": "Citizen Complainant", "value": 10, "details": "Perpetrated false arrest and excessive force." },
+    { "source": "Texas Medical Board", "target": "Crossroads Health Center", "value": 7, "details": "Dismissed complaint, protecting alleged fraud." },
+    { "source": "Intimidator (361-550-9651)", "target": "Citizen Complainant", "value": 10, "details": "Sent threatening text messages after DOJ complaint was acknowledged." }
+  ]
+}

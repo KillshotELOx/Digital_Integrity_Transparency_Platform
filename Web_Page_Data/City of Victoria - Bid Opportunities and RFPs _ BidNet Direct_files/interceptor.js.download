@@ -1,0 +1,1 @@
+function interceptorReloadPageOnClose(){window.location.reload(true);}

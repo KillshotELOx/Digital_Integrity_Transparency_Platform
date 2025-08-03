@@ -1,0 +1,23 @@
+var CallbackManager=function(){if(typeof(Storage)!=="undefined"){this.defaultURL='/';this.contextPath='';this.sessionStorage=sessionStorage;}}
+var Callback=function(url,method){this.url=url;this.method=method;this.json='';}
+Callback.prototype.setForm=function(jsonString){this.json=jsonString;}
+CallbackManager.prototype._stripString=function(string){if(string==null){return"";}
+return string.replace(this.contextPath,'');}
+CallbackManager.prototype.setContextPath=function(path){this.contextPath=path;}
+CallbackManager.prototype.get=function(key,defaultUrl){if(key==null||key==undefined){return null;}
+var value=null;if(typeof(Storage)!=="undefined"){value=this.sessionStorage.getItem('mdf-callback.'+key.toLowerCase());}
+if(value==null){return defaultUrl;}
+value=JSON.parse(value);value.url=this._stripString(value.url);return value;}
+CallbackManager.prototype.getFullUrl=function(key,defaultUrl){var cb=this.get(key,defaultUrl);if(cb.json===undefined||cb.json.length==0){return cb.url;}
+var urlParameters=Object.keys(cb.json).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(cb.json[k])}).join('&')
+return cb.url+"?"+urlParameters;}
+CallbackManager.prototype.urlMatchesCallback=function(callbackName,rgx){var cb=this.get(callbackName,null);if(cb==null){return false;}
+var regex=new RegExp(rgx);if(regex.test(cb.url)){return true;}
+return false;}
+CallbackManager.prototype.register=function(key,value){if(key==null||key==undefined){return null;}
+if(typeof(Storage)=="undefined"){return null;}
+return this.sessionStorage.setItem('mdf-callback.'+key.toLowerCase(),JSON.stringify(value));}
+CallbackManager.prototype.verifyIntegrity=function(sessionId){var key='mdf-callback-session-id';if(typeof(Storage)!=="undefined"){var value=this.sessionStorage.getItem(key);if(sessionId==null||value==null||value!=sessionId){this.sessionStorage.clear();this.sessionStorage.setItem(key,sessionId);}}}
+CallbackManager.prototype.addParameter=function(callbackName,key,value){if(key==null||key==undefined){return null;}
+if(typeof(Storage)!=="undefined"){var callback=this.sessionStorage.getItem('mdf-callback.'+callbackName.toLowerCase());callback=JSON.parse(callback);if(callback!=null){var json=callback['json'];if(json==""){json={};}
+json[key]=value;var cb=new Callback(callback.url,callback.method);cb.setForm(json);this.register(callbackName,cb);}}}

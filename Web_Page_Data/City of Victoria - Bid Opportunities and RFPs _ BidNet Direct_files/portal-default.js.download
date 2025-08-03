@@ -1,0 +1,18 @@
+function _trackInterceptPromo(eventName,promo_id,promo_name,missingAccess){if(typeof(dataLayer)=='undefined'){return;}
+dataLayer.push({'event':eventName,'promo_id':promo_id,'promo_name':promo_name,'promo_position':'Center','promo_creative':'Lightbox','missingAccess':missingAccess});}
+function _trackVirtualPageView(url){if(typeof(dataLayer)=='undefined'){return;}
+dataLayer.push({'event':'VirtualPageView','virtualPageURL':url});}
+function _trackMemberImpersonatorGA(impersonating,username){if(typeof(dataLayer)=='undefined'){return;}
+if(impersonating){dataLayer.push({'Impersonating':'yes','Impersonator':username});}}
+function _trackMemberDataGA(memberInfoData){if(typeof(dataLayer)=='undefined'){return;}
+dataLayer.push(memberInfoData);}
+function _trackECommerceGA(eCommerceData){if(typeof(dataLayer)=='undefined'){return;}
+dataLayer.push(eCommerceData);}
+function _trackECommerceGAEvents(eCommerceData){if(typeof(dataLayer)=='undefined'){return;}
+dataLayer.push(eCommerceData);}
+if(typeof(messages.warning.ie)!=='undefined'){messages.warning.ie.warn.header=function(){return("You are using a version of Internet Explorer that may not be supported on sections of our site.");}
+messages.warning.ie.warn.paragraph1=function(){return("We encourage you to update your browser to a new version of Internet Explorer or to use a different browser such as Chrome, Firefox or Safari.");}
+messages.warning.ie.warn.paragraph2=function(){return("To update your browser, please click on one of these icons:");}
+messages.warning.ie.warn.closeMessage=function(){return("By closing this window, you acknowledge that your experience on our website may be affected and you may not be able to view or login to the site in the future without upgrading your browser.");}}
+if(typeof(messages.ajaxIndicator)!=='undefined'){messages.ajaxIndicator.error.other.message=function(){return("An unexpected system error has occurred.  If the problem persists, please contact the Call Center at 800-835-4603 for assistance.");}}
+function scrollBackToTop(pixelThreshold,buttonId){var buttonSelector=$('#'+buttonId);if(buttonSelector.length){var backToTop=function(){var scrollTop=$(window).scrollTop();if(scrollTop>pixelThreshold){buttonSelector.addClass('show');}else{buttonSelector.removeClass('show');}};backToTop();$(window).on('scroll',function(){backToTop();});buttonSelector.on('click',function(e){e.preventDefault();$('html,body').animate({scrollTop:0},700);});}}
