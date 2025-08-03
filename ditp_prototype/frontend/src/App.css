@@ -1,0 +1,78 @@
+body {
+  background-color: #f0f2f5;
+  color: #2c3e50;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #ffffff;
+  padding: 20px;
+  color: #2c3e50;
+  border-bottom: 1px solid #dddfe2;
+}
+
+.graph-container {
+  border: 1px solid #dddfe2;
+  margin: 20px;
+  background-color: #ffffff;
+}
+
+.node-details {
+  position: absolute;
+  top: 120px;
+  right: 20px;
+  background: #ffffff;
+  border: 1px solid #dddfe2;
+  padding: 15px;
+  max-width: 300px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #8e44ad; /* Purple for node details text */
+}
+
+.node-details h2 {
+  color: #27ae60; /* Green for node details headings */
+}
+
+.submission-form-container {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #dddfe2;
+  background-color: #ffffff;
+}
+
+.submission-form-container h2 {
+  color: #27ae60; /* Green for submission form headings */
+}
+
+.submission-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f5f6f7;
+  border: 1px solid #ccd0d5;
+  color: #34495e; /* Darker blue-grey for textarea input */
+}
+
+.submission-form-container input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.submission-form-container button {
+  padding: 10px 20px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.submission-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #e7f3ff;
+  color: #c0392b; /* Reddish-brown for submission messages */
+}
